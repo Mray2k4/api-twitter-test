@@ -13,8 +13,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/static/index.html'));
 })
 
-app.get('/api/character', function(req, res){
+app.get('/api/tweets', function(req, res){
    // res.send(character);
+   const tweets = `https://api.twitter.com/2/tweets/${id}`
 
    axios.get('https://swapi.dev/api/people/1')
   .then(function (response) {

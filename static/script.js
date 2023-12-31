@@ -1,6 +1,6 @@
 function listAdd() {
 
-   fetch('/api/character')           //api for the get request
+   fetch('/api/tweets')           //api for the get request
   .then(response => response.json())
   .then(function(data){
 	console.log(data)
