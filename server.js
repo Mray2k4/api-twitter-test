@@ -15,9 +15,13 @@ app.get('/', (req, res) => {
 
 app.get('/api/tweets', function(req, res){
    // res.send(character);
-   const tweets = `https://api.twitter.com/2/tweets/${id}`
+   const apiUrl = `https://api.twitter.com/2/tweets/1742229265599344708`
+   const token = 'AAAAAAAAAAAAAAAAAAAAAPly9QAAAAAAQP4Qf6PfN0NeU4L5keo%2B7kae%2Fs0%3DEQIp2W7jkVldFBLvOOFtSJXl2vWEe3f1J1STKMTyWEbsogNYfE'
+   const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
 
-   axios.get('https://swapi.dev/api/people/1')
+   axios.get(apiUrl, config)
   .then(function (response) {
     // handle success
     res.send(response.data);
